@@ -7,9 +7,10 @@ const AuthUtils = require('../utility/auth');
 const parseInput=(input)=>{
     try{
         let parsedInput=JSON.parse(input)
-        return parsedInput.body
+        return parsedInput
     }
     catch(ex){
+        console.error({parseInput:ex})
         return input
     }
 }
@@ -30,7 +31,9 @@ const handler = async (input) => {
     }
     try {
         console.log({input})
-        let event=parseInput(input)
+        let event=parseInput(input.body)
+        console.log({parsedInput:event})
+
         if (event.event_type === 'transactions') {
             response.body = await txnController.getAllTransactions(event)
         }
@@ -43,6 +46,7 @@ const handler = async (input) => {
         response.body=JSON.stringify(response.body)
         return response
     } catch (error) {
+        console.error({handler:error})
         return {
             statusCode: 500,
             headers: {

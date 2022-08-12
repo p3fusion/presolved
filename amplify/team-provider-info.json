@@ -15,7 +15,7 @@
       "function": {
         "aggregatorsOperation": {
           "deploymentBucketName": "amplify-presolved-develop-233125-deployment",
-          "s3Key": "amplify-builds/aggregatorsOperation-70557062475a514e2f71-build.zip"
+          "s3Key": "amplify-builds/aggregatorsOperation-6a46423937735865494d-build.zip"
         }
       },
       "hosting": {
