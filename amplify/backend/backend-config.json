@@ -29,6 +29,20 @@
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "aggregatorBridgeApi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "aggregatorsOperation",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "auth": {
