@@ -4,7 +4,18 @@ const disputesController = require('../controller/disputes');
 const txnController = require('../controller/transactions');
 const AuthUtils = require('../utility/auth');
 
-const handler = async (event) => {
+const parseInput=(input)=>{
+    try{
+        let parsedInput=JSON.parse(input)
+        return parsedInput.body
+    }
+    catch(ex){
+        return input
+    }
+}
+
+
+const handler = async (input) => {
     let response = {
         statusCode: 200,
         headers: {
@@ -12,12 +23,14 @@ const handler = async (event) => {
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
         },
-        body: {
+        body: JSON.stringify({
             "text": "Please define event_type",
-            event
-        }
+            input
+        })
     }
     try {
+        console.log({input})
+        let event=parseInput(input)
         if (event.event_type === 'transactions') {
             response.body = await txnController.getAllTransactions(event)
         }
@@ -27,7 +40,7 @@ const handler = async (event) => {
         else if (event.event_type === 'validate') {
             response.body = await AuthUtils.validateCredentials(event)
         }
-
+        response.body=JSON.stringify(response.body)
         return response
     } catch (error) {
         return {
@@ -36,7 +49,7 @@ const handler = async (event) => {
                 "Access-Control-Allow-Origin": "*",
                 "Access-Control-Allow-Headers": "*"
             },
-            body: { error },
+            body:JSON.stringify( error ),
         };
     }
 

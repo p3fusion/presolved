@@ -46,7 +46,7 @@
     }
   },
   "auth": {
-    "presolved20ce6e62": {
+    "presolveda93271c8": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -57,7 +57,9 @@
           "EMAIL"
         ],
         "signupAttributes": [
-          "EMAIL"
+          "EMAIL",
+          "NAME",
+          "PHONE_NUMBER"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,

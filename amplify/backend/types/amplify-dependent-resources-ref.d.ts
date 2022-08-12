@@ -20,14 +20,15 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "auth": {
-        "presolved20ce6e62": {
+        "presolveda93271c8": {
             "IdentityPoolId": "string",
             "IdentityPoolName": "string",
             "UserPoolId": "string",
             "UserPoolArn": "string",
             "UserPoolName": "string",
             "AppClientIDWeb": "string",
-            "AppClientID": "string"
+            "AppClientID": "string",
+            "CreatedSNSRole": "string"
         }
     }
 }
