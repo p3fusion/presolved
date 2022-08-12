@@ -1,0 +1,25 @@
+type MerchantsDisputeRules @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  merchant_id: String!
+  rule_name: String!
+  rule_data: String!
+  rule_result: String!
+}
+
+type PaymentAggregators @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  merchant_id: String!
+  aggregator: String!
+  client_id: String!
+  secret_key: String!
+  created_at: String!
+}
+
+type MerchantsProfile @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  auth_id: String!
+  email: String!
+  name: String!
+  company: String!
+  created_at: String!
+}

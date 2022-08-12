@@ -7,22 +7,11 @@ import { Provider } from 'react-redux'
 import reportWebVitals from "./gc-components/reportWebVitals";
 import DefaultErrorBoundary from "./gc-components/errorBoundary";
 import { Amplify, API } from 'aws-amplify';
-
 import SigninPage from "./landing/signin";
 import DashboardIndexPage from "./dashboard";
+import awsExports from './aws-exports';
 
-//import awsExports from './aws-exports';
-//Amplify.configure({
-  //...awsExports,
-  /* API: {
-    endpoints: [ 
-      {
-        name: "apiAggregatorFunctions",
-        endpoint: "https://m0guxo7wmf.execute-api.us-east-1.amazonaws.com/default/paymentAggregatorsEvents-prod"
-      }
-    ]
-  } */
-//});
+Amplify.configure(awsExports);
 
 
 

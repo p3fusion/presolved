@@ -15,7 +15,7 @@
       "function": {
         "aggregatorsOperation": {
           "deploymentBucketName": "amplify-presolved-develop-233125-deployment",
-          "s3Key": "amplify-builds/aggregatorsOperation-512b616f7a454d6d4e78-build.zip"
+          "s3Key": "amplify-builds/aggregatorsOperation-70557062475a514e2f71-build.zip"
         }
       },
       "hosting": {
@@ -23,6 +23,9 @@
           "appId": "dw2zeui0d5v7t",
           "type": "manual"
         }
+      },
+      "auth": {
+        "presolved20ce6e62": {}
       }
     }
   }
